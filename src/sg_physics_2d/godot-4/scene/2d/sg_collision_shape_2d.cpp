@@ -96,6 +96,7 @@ void SGCollisionShape2D::_notification(int p_what) {
 void SGCollisionShape2D::set_disabled(bool p_disabled) {
 	if (disabled != p_disabled) {
 		disabled = p_disabled;
+		queue_redraw();
 		if (collision_object_rid.is_valid() && rid.is_valid()) {
 			if (disabled) {
 				SGPhysics2DServer::get_singleton()->collision_object_remove_shape(collision_object_rid, rid);

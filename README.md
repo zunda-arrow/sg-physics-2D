@@ -227,7 +227,7 @@ resources using the `SGPhysics2DServer`.
 
 There's a demo in the code base demonstrating how to do this:
 
-[https://gitlab.com/snopek-games/sg-physics-2d/-/blob/main/demos/tilemap/Main.gd](https://gitlab.com/snopek-games/sg-physics-2d/-/blob/main/demos/tilemap/Main.gd)
+[https://gitlab.com/snopek-games/sg-physics-2d/-/blob/main/projects/godot-4/demos/tilemap/Main.gd](https://gitlab.com/snopek-games/sg-physics-2d/-/blob/main/projects/godot-4/demos/tilemap/Main.gd)
 
 Compiling from source
 ---------------------

@@ -1,0 +1,46 @@
+name: Octo Organization CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+
+permissions:
+  contents: write
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Run a one-line script
+        run: echo Hello from Octo Organization
+
+      - name: Git Submodule Update
+        run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
+
+      - name: Compile
+        run: |
+          scons target=template_debug
+
+      - name: Add binaries
+        run: |
+          git add -f bin/*.so
+          git add -f bin/*.dll
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add generated.txt
+          git diff --cached --quiet || git commit -m "Update generated file"
+          git push
+

@@ -37,6 +37,7 @@
 #include "./scene/2d/sg_area_2d.h"
 #include "./scene/2d/sg_static_body_2d.h"
 #include "./scene/2d/sg_character_body_2d.h"
+#include "./scene/2d/sg_rigid_body_2d.h"
 #include "./scene/2d/sg_ray_cast_2d.h"
 #include "./scene/2d/sg_collision_shape_2d.h"
 #include "./scene/2d/sg_collision_polygon_2d.h"
@@ -70,6 +71,7 @@ void register_sg_physics_2d_extension_types(ModuleInitializationLevel p_level) {
 		GDREGISTER_CLASS(SGPhysicsBody2D);
 		GDREGISTER_CLASS(SGStaticBody2D);
 		GDREGISTER_CLASS(SGCharacterBody2D);
+		GDREGISTER_CLASS(SGRigidBody2D);
 		GDREGISTER_CLASS(SGKinematicCollision2D);
 		GDREGISTER_CLASS(SGRayCast2D);
 		GDREGISTER_CLASS(SGRayCastCollision2D);

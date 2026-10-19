@@ -25,8 +25,7 @@
 #define SG_KINEMATIC_BODY_2D_H
 
 #include "sg_collision_object_2d.h"
-
-class SGKinematicCollision2D;
+#include "../../servers/sg_physics_2d_server.h"
 
 class SGKinematicBody2D : public SGCollisionObject2D {
 	GDCLASS(SGKinematicBody2D, SGCollisionObject2D);

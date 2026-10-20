@@ -74,6 +74,8 @@ void SGFixedVector2::_bind_methods() {
 
 	ClassDB::bind_method(D_METHOD("from_float", "float_vector"), &SGFixedVector2::from_float);
 	ClassDB::bind_method(D_METHOD("to_float"), &SGFixedVector2::to_float);
+
+	ClassDB::bind_method(D_METHOD("_to_string"), &SGFixedVector2::_to_string);
 }
 
 Ref<SGFixedVector2> SGFixedVector2::add(const Variant &p_other) const {
@@ -301,5 +303,10 @@ Vector2 SGFixedVector2::to_float() const {
 
 Ref<SGFixedVector2> SGFixedVector2::cubic_interpolate(const Ref<SGFixedVector2>& p_b, const Ref<SGFixedVector2>& p_pre_a, const Ref<SGFixedVector2>& p_post_b, int64_t p_weight) const {
 	return SGFixedVector2::from_internal(value.cubic_interpolate(p_b->get_internal(), p_pre_a->get_internal(), p_post_b->get_internal(), fixed(p_weight)));
+}
+
+
+String SGFixedVector2::_to_string() {
+    return vformat("SGFixedVector2(%d, %d)", value.x.value, value.y.value);
 }
 

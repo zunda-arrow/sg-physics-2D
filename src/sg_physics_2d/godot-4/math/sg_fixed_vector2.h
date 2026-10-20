@@ -140,6 +140,9 @@ public:
 		watcher = nullptr;
 	}
 
+
+    String _to_string();
+
 	~SGFixedVector2() { };
 
 };
